@@ -58,13 +58,15 @@ repairs the shared folder.
 
 ## Link the app to Forge models
 
-1. Serve an OpenAI-compatible endpoint for Forge models and set it as
-   `FORGE_GATEWAY_URL` on the developer website (the panel already forwards
-   playground/chat/API traffic there and bills credits per call).
-2. Copy `forge.provider.json`'s `provider.forge` block into `opencode.json`,
-   replacing `YOUR-FORGE-SITE` with the site host.
-3. `set FORGE_API_KEY=<key from the site Forge → API Keys page>` and pick a
-   `forge/*` model in the app.
+**No config needed for the basics:** `forge` ships as a built-in provider
+named **AoG DevHub** (`packages/opencode/src/provider/provider.ts`), like
+OpenCode's own Zen entry. Set `FORGE_API_KEY` (Forge → API Keys on the
+panel) and the provider appears with `big-pickle`, `forge-dev-1`, and
+`forge-review-1` — all reasoning-capable with low/medium/high effort
+options. Startup discovery pulls the rest of the live catalog from
+`{baseURL}/models` (override the default `https://aogamers.net/forge/v1`
+with `FORGE_BASE_URL`). Any `provider.forge` block in `opencode.json`
+merges over these defaults.
 
 ## Reasoning in the desktop client
 

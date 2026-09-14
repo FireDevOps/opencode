@@ -157,6 +157,96 @@ type CustomDep = {
   get: (key: string) => Effect.Effect<string | undefined>
 }
 
+// [AoG] Hub fork: built-in Forge provider, mirroring how OpenCode ships its
+// own Zen entry — it appears with no user config, and any `provider.forge`
+// block in opencode.json merges over these defaults.
+export const FORGE_PROVIDER_ID = "forge"
+export const FORGE_DEFAULT_BASE_URL = "https://aogamers.net/forge/v1"
+
+const FORGE_BUILTIN_MODELS: ReadonlyArray<readonly [string, string]> = [
+  ["big-pickle", "Big Pickle"],
+  ["forge-dev-1", "Forge Dev 1"],
+  ["forge-review-1", "Forge Review 1"],
+]
+
+function forgeBuiltinModel(id: string, name: string, baseURL: string, reasoning = true): Model {
+  return {
+    id: ModelV2.ID.make(id),
+    providerID: ProviderV2.ID.make(FORGE_PROVIDER_ID),
+    name,
+    family: "",
+    api: {
+      id,
+      url: baseURL,
+      npm: "@ai-sdk/openai-compatible",
+    },
+    status: "active",
+    headers: {},
+    options: {},
+    cost: { input: 0, output: 0, cache: { read: 0, write: 0 } },
+    limit: { context: 200000, output: 32000 },
+    capabilities: {
+      temperature: true,
+      reasoning,
+      attachment: true,
+      toolcall: true,
+      input: { text: true, audio: false, image: false, video: false, pdf: false },
+      output: { text: true, audio: false, image: false, video: false, pdf: false },
+      interleaved: false,
+    },
+    release_date: "",
+    variants: {},
+  }
+}
+
+export function forgeBuiltinProvider(baseURL: string): Info {
+  const models: Record<string, Model> = {}
+  for (const [id, name] of FORGE_BUILTIN_MODELS) {
+    models[id] = forgeBuiltinModel(id, name, baseURL)
+  }
+  return {
+    id: ProviderV2.ID.make(FORGE_PROVIDER_ID),
+    name: "AoG DevHub",
+    source: "custom",
+    env: ["FORGE_API_KEY"],
+    options: { baseURL },
+    models,
+  }
+}
+
+/**
+ * Map an OpenAI models-list payload (our panel's /forge/v1/models shape,
+ * extra keys included) to runtime models.
+ */
+export function forgeDiscoveredModels(
+  baseURL: string,
+  items: Array<Record<string, any>>,
+): Record<string, Model> {
+  const models: Record<string, Model> = {}
+  for (const item of items) {
+    if (!item || typeof item.id !== "string" || item.id === "") continue
+    const name = typeof item.name === "string" && item.name !== "" ? item.name : item.id
+    const built = forgeBuiltinModel(item.id, name, baseURL, item.reasoning ?? true)
+    models[item.id] = { ...built, release_date: typeof item.created === "number" ? String(item.created) : "" }
+  }
+  return models
+}
+
+async function fetchForgeModels(baseURL: string, apiKey: string): Promise<Record<string, Model>> {
+  try {
+    const res = await fetch(`${baseURL.replace(/\/$/, "")}/models`, {
+      headers: { Authorization: `Bearer ${apiKey}` },
+      signal: AbortSignal.timeout(15000),
+    })
+    if (!res.ok) return {}
+    const json = (await res.json()) as { data?: Array<Record<string, any>> }
+    const items = Array.isArray(json?.data) ? json.data : []
+    return forgeDiscoveredModels(baseURL, items)
+  } catch {
+    return {}
+  }
+}
+
 function selectAzureLanguageModel(sdk: any, modelID: string, useChat: boolean) {
   if (useChat && sdk.chat) return sdk.chat(modelID)
   if (sdk.responses) return sdk.responses(modelID)
@@ -213,6 +303,27 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
         },
         options: { headerTimeout: OPENAI_HEADER_TIMEOUT_DEFAULT },
       }),
+    forge: Effect.fnUntraced(function* (input: Info) {
+      const envs = yield* dep.env()
+      const cfg = yield* dep.config()
+      const configured = cfg.provider?.[FORGE_PROVIDER_ID]?.options as Record<string, any> | undefined
+      const baseURL =
+        (typeof configured?.["baseURL"] === "string" && configured["baseURL"]) ||
+        envs["FORGE_BASE_URL"] ||
+        (typeof input.options?.["baseURL"] === "string" && input.options["baseURL"]) ||
+        FORGE_DEFAULT_BASE_URL
+      const apiKey =
+        envs["FORGE_API_KEY"] ||
+        (typeof configured?.["apiKey"] === "string" ? configured["apiKey"] : undefined)
+      return {
+        autoload: Boolean(apiKey),
+        options: { baseURL, ...(apiKey ? { apiKey } : {}) },
+        async discoverModels() {
+          if (!apiKey) return {}
+          return fetchForgeModels(baseURL, apiKey)
+        },
+      }
+    }),
     meta: () =>
       Effect.succeed({
         autoload: false,
@@ -1405,6 +1516,16 @@ const layer = Layer.effect(
         const catalog = mapValues(modelsDev, fromModelsDevProvider)
         const database = mapValues(catalog, toPublicInfo)
 
+        // [AoG] Hub fork: built-in Forge provider next to the catalog ones.
+        // User config with the same id merges over these defaults below.
+        {
+          const forgeID = ProviderV2.ID.make(FORGE_PROVIDER_ID)
+          if (!database[forgeID]) {
+            const baseURL = (yield* env.get("FORGE_BASE_URL")) ?? FORGE_DEFAULT_BASE_URL
+            database[forgeID] = forgeBuiltinProvider(baseURL)
+          }
+        }
+
         const providers: Record<ProviderV2.ID, Info> = {} as Record<ProviderV2.ID, Info>
         const languages = new Map<string, LanguageModelV3>()
         const modelLoaders: {
@@ -1654,14 +1775,15 @@ const layer = Layer.effect(
           mergeProvider(providerID, partial)
         }
 
-        const gitlab = ProviderV2.ID.make("gitlab")
-        if (discoveryLoaders[gitlab] && providers[gitlab] && isProviderAllowed(gitlab)) {
+        const discoverable = [ProviderV2.ID.make("gitlab"), ProviderV2.ID.make(FORGE_PROVIDER_ID)]
+        for (const discoverID of discoverable) {
+          if (!(discoveryLoaders[discoverID] && providers[discoverID] && isProviderAllowed(discoverID))) continue
           yield* Effect.promise(async () => {
             try {
-              const discovered = await discoveryLoaders[gitlab]()
+              const discovered = await discoveryLoaders[discoverID]()
               for (const [modelID, model] of Object.entries(discovered)) {
-                if (!providers[gitlab].models[modelID]) {
-                  providers[gitlab].models[modelID] = model
+                if (!providers[discoverID].models[modelID]) {
+                  providers[discoverID].models[modelID] = model
                 }
               }
             } catch (e) {}
