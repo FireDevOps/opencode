@@ -5,7 +5,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "Forge",
       "options": {
-        "baseURL": "https://YOUR-FORGE-SITE/forge/v1",
+        "baseURL": "https://avernic.net/forge/v1",
         "apiKey": "{env:FORGE_API_KEY}"
       },
       "models": {

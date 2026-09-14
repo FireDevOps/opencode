@@ -76,7 +76,9 @@ qwen/kimi/deepseek variants and `big-pickle`, which the generic
 openai-compatible denylist would otherwise exclude. Thinking traces render
 in the session timeline like any other provider.
 
-Note: the panel's `POST /forge/api/chat` is single-shot (chat + machines), not
-agent-mode (no tool use). Full credit-billed agent mode needs an
-OpenAI-compatible `/forge/v1` on the site — tracked as the next step.
-Until then, point `baseURL` at the same gateway the panel uses.
+Note: the panel's `POST /forge/api/chat` is single-shot (chat + machines).
+Agent mode (tool use, sessions, streaming) speaks OpenAI against the panel
+itself: set the provider `baseURL` to `https://YOUR-FORGE-SITE/forge/v1`
+with a Forge API key — see `POST /forge/v1/chat/completions` on the site's
+Forge → API page. Model ids are panel slugs; the panel maps them to gateway
+ids, bills per-call credits, and streams SSE with `[DONE]`.
