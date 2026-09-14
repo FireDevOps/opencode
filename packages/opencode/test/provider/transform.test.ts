@@ -6209,3 +6209,74 @@ describe("ProviderTransform.options - kimi family adaptive thinking", () => {
     expect(result.thinking).toBeUndefined()
   })
 })
+
+describe("ProviderTransform.variants - forge reasoning", () => {
+  const createForgeModel = (id: string, reasoning = true) =>
+    ({
+      id: `forge/${id}`,
+      providerID: "forge",
+      api: {
+        id,
+        url: "https://example.com/forge/v1",
+        npm: "@ai-sdk/openai-compatible",
+      },
+      name: id,
+      capabilities: {
+        temperature: true,
+        reasoning,
+        attachment: true,
+        toolcall: true,
+        input: {
+          text: true,
+          audio: false,
+          image: false,
+          video: false,
+          pdf: false,
+        },
+        output: {
+          text: true,
+          audio: false,
+          image: false,
+          video: false,
+          pdf: false,
+        },
+        interleaved: false,
+      },
+      cost: {
+        input: 0,
+        output: 0,
+        cache: { read: 0, write: 0 },
+      },
+      limit: {
+        context: 128000,
+        output: 8192,
+      },
+      status: "active",
+      options: {},
+      headers: {},
+    }) as any
+
+  test("forge models get OpenRouter-style effort variants", () => {
+    const result = ProviderTransform.variants(createForgeModel("big-pickle"))
+    expect(Object.keys(result).sort()).toEqual(["high", "low", "medium"])
+    expect(result.medium).toEqual({ reasoning: { effort: "medium" } })
+  })
+
+  test("forge denylist ids still get variants (qwen/kimi/deepseek free models)", () => {
+    for (const id of ["qwen/qwen3-free", "moonshotai/kimi-free", "deepseek/deepseek-r1-free"]) {
+      const result = ProviderTransform.variants(createForgeModel(id))
+      expect(Object.keys(result).sort()).toEqual(["high", "low", "medium"])
+    }
+  })
+
+  test("forge models without reasoning capability get no variants", () => {
+    const result = ProviderTransform.variants(createForgeModel("big-pickle", false))
+    expect(result).toEqual({})
+  })
+
+  test("non-forge openai-compatible denylist ids still get no variants", () => {
+    const model = createForgeModel("qwen/qwen3-free")
+    model.providerID = "other"
+    expect(ProviderTransform.variants(model)).toEqual({})
+  })
+})

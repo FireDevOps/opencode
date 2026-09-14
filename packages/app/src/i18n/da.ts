@@ -412,12 +412,12 @@ export const dict = {
   "wsl.onboarding.needAnotherDistroHint": "Installer en Linux-distribution fra WSL-kataloget",
   "wsl.onboarding.wslNotInstalled.title": "WSL er ikke installeret",
   "wsl.onboarding.wslNotInstalled.description":
-    "WSL (Windows Subsystem for Linux) er påkrævet, før OpenCode kan tilføje en WSL-server",
+    "WSL (Windows Subsystem for Linux) er påkrævet, før [AoG] Hub kan tilføje en WSL-server",
   "wsl.onboarding.wslUnavailable.title": "WSL er ikke tilgængelig",
-  "wsl.onboarding.wslUnavailable.description": "OpenCode kunne ikke bekræfte WSL på denne maskine.",
+  "wsl.onboarding.wslUnavailable.description": "[AoG] Hub kunne ikke bekræfte WSL på denne maskine.",
   "wsl.onboarding.installWsl": "Installer WSL",
   "wsl.onboarding.windowsRestartRequired":
-    "Genstart Windows for at fuldføre installationen af WSL, og åbn derefter OpenCode igen.",
+    "Genstart Windows for at fuldføre installationen af WSL, og åbn derefter [AoG] Hub igen.",
   "wsl.onboarding.next": "Næste",
   "wsl.onboarding.refresh": "Opdater",
   "wsl.onboarding.allDistrosAdded": "Alle installerede distributioner er allerede tilføjet.",
@@ -550,7 +550,7 @@ export const dict = {
   "toast.session.listFailed.title": "Kunne ikke indlæse sessioner for {{project}}",
 
   "toast.update.title": "Opdatering tilgængelig",
-  "toast.update.description": "En ny version af OpenCode ({{version}}) er nu tilgængelig til installation.",
+  "toast.update.description": "En ny version af [AoG] Hub ({{version}}) er nu tilgængelig til installation.",
   "toast.update.action.installRestart": "Installer og genstart",
   "toast.update.action.notYet": "Ikke endnu",
 
@@ -584,7 +584,7 @@ export const dict = {
   "error.chain.didYouMean": "Mente du: {{suggestions}}",
   "error.chain.modelNotFound": "Model ikke fundet: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Kontrollér udbyder- og modelnavnene i din konfiguration (opencode.json)",
-  "error.chain.mcpFailed": 'MCP-server "{{name}}" fejlede. Bemærk, OpenCode understøtter ikke MCP-godkendelse endnu.',
+  "error.chain.mcpFailed": 'MCP-server "{{name}}" fejlede. Bemærk, [AoG] Hub understøtter ikke MCP-godkendelse endnu.',
   "error.chain.providerAuthFailed": "Udbydergodkendelse mislykkedes ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Kunne ikke initialisere udbyder "{{provider}}". Tjek legitimationsoplysninger og konfiguration.',
@@ -761,7 +761,7 @@ export const dict = {
   "sidebar.workspaces.enable": "Aktiver arbejdsområder",
   "sidebar.workspaces.disable": "Deaktiver arbejdsområder",
   "sidebar.gettingStarted.title": "Kom i gang",
-  "sidebar.gettingStarted.line1": "OpenCode inkluderer gratis modeller så du kan starte med det samme.",
+  "sidebar.gettingStarted.line1": "[AoG] Hub inkluderer gratis modeller så du kan starte med det samme.",
   "sidebar.gettingStarted.line2": "Forbind enhver udbyder for at bruge modeller, inkl. Claude, GPT, Gemini osv.",
   "sidebar.project.recentSessions": "Seneste sessioner",
   "sidebar.project.viewAllSessions": "Vis alle sessioner",
@@ -769,7 +769,7 @@ export const dict = {
   "sidebar.empty.title": "Ingen åbne projekter",
   "sidebar.empty.description": "Åbn et projekt for at komme i gang",
 
-  "app.name.desktop": "OpenCode Desktop",
+  "app.name.desktop": "[AoG] Hub Desktop",
   "settings.section.desktop": "Desktop",
   "settings.section.server": "Server",
   "settings.tab.general": "Generelt",
@@ -787,17 +787,17 @@ export const dict = {
   "settings.general.section.display": "Skærm",
 
   "settings.general.row.language.title": "Sprog",
-  "settings.general.row.language.description": "Ændr visningssproget for OpenCode",
+  "settings.general.row.language.description": "Ændr visningssproget for [AoG] Hub",
   "settings.general.row.shell.title": "Terminalshell",
   "settings.general.row.shell.description":
     "Vælg den shell, der bruges i din terminal. Kompatible shells bruges også til agentens værktøjskald.",
   "settings.general.row.shell.autoDefault": "Automatisk (standard)",
   "settings.general.row.shell.terminalOnly": "kun terminal",
   "settings.general.row.appearance.title": "Udseende",
-  "settings.general.row.appearance.description": "Tilpas hvordan OpenCode ser ud på din enhed",
+  "settings.general.row.appearance.description": "Tilpas hvordan [AoG] Hub ser ud på din enhed",
   "settings.general.row.colorScheme.title": "Farveskema",
   "settings.general.row.colorScheme.description":
-    "Vælg, om OpenCode skal følge systemtemaet eller bruge et lyst eller mørkt tema",
+    "Vælg, om [AoG] Hub skal følge systemtemaet eller bruge et lyst eller mørkt tema",
   "settings.general.row.theme.title": "Tema",
   "settings.general.row.theme.description": "Tilpas OpenCodes tema.",
   "settings.general.row.font.title": "Kode-skrifttype",
@@ -852,7 +852,7 @@ export const dict = {
   "settings.general.row.releaseNotes.description": 'Vis pop op-vinduer med "Hvad er nyt" efter opdateringer',
 
   "settings.updates.row.startup.title": "Tjek for opdateringer ved opstart",
-  "settings.updates.row.startup.description": "Tjek automatisk for opdateringer, når OpenCode starter",
+  "settings.updates.row.startup.description": "Tjek automatisk for opdateringer, når [AoG] Hub starter",
   "settings.updates.row.check.title": "Tjek for opdateringer",
   "settings.updates.row.check.description": "Tjek manuelt for opdateringer og installer, hvis tilgængelig",
   "settings.updates.action.checkNow": "Tjek nu",
@@ -860,7 +860,7 @@ export const dict = {
   "settings.updates.action.downloading": "Downloader...",
   "settings.updates.action.installing": "Installerer...",
   "settings.updates.toast.latest.title": "Du er opdateret",
-  "settings.updates.toast.latest.description": "Du kører den nyeste version af OpenCode.",
+  "settings.updates.toast.latest.description": "Du kører den nyeste version af [AoG] Hub.",
 
   "sound.option.none": "Ingen",
   "sound.option.alert01": "Alarm 01",
@@ -1129,7 +1129,7 @@ export const dict = {
   "error.childStore.storeCreateFailed": "Kunne ikke oprette lager",
   "terminal.connectionLost.abnormalClose": "WebSocket lukkede unormalt: {{code}}",
 
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "[AoG] Hub",
   "desktop.menu.file": "Arkiv",
   "desktop.menu.edit": "Rediger",
   "desktop.menu.view": "Oversigt",
@@ -1188,9 +1188,9 @@ export const dict = {
   "desktop.recovery.action.exportLogs": "Eksportér logfiler",
   "desktop.recovery.action.keepWaiting": "Vent fortsat",
   "desktop.recovery.action.quit": "Afslut",
-  "desktop.recovery.loadFailed": "OpenCode kunne ikke indlæses",
+  "desktop.recovery.loadFailed": "[AoG] Hub kunne ikke indlæses",
   "desktop.recovery.terminated": "OpenCode-vinduet blev uventet afsluttet",
-  "desktop.recovery.unresponsive": "OpenCode svarer ikke",
+  "desktop.recovery.unresponsive": "[AoG] Hub svarer ikke",
   "desktop.recovery.unresponsive.detail": "Du kan starte appen igen, åbne logfilerne eller fortsætte med at vente.",
   "desktop.recovery.loadFailed.detail": "Vindue: {{window}}\nURL: {{url}}\nFejl: {{code}} {{description}}",
   "desktop.recovery.terminated.detail": "Vindue: {{window}}\nÅrsag: {{reason}}\nKode: {{code}}",
@@ -1235,7 +1235,7 @@ export const dict = {
   "help.tabs.title": "Introduktion til faner",
   "help.tabs.description": "Organiser dit arbejde og dine aktive sessioner med faner",
   "help.tabs.date": "14. juli",
-  "help.tabs.introduction": "OpenCode Desktop er nu bygget op omkring faner.",
+  "help.tabs.introduction": "[AoG] Hub Desktop er nu bygget op omkring faner.",
   "help.tabs.sessions":
     "Start en ny session i en fane, eller åbn en eksisterende session fra et af dine projekter. Åbn en ny fane, når du går i gang med noget nyt, og luk den, når du er færdig.",
   "help.tabs.organize":

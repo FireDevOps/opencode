@@ -22,10 +22,12 @@ function tauriDir(id: string) {
 }
 
 // The Tauri app identifier changes between dev/beta/prod builds.
+// Hub ids: a fresh brand never migrates upstream OpenCode data, so the
+// two desktops stay fully isolated side by side.
 const TAURI_APP_IDS: Record<string, string> = {
-  dev: "ai.opencode.desktop.dev",
-  beta: "ai.opencode.desktop.beta",
-  prod: "ai.opencode.desktop",
+  dev: "ai.aog.hub.dev",
+  beta: "ai.aog.hub.beta",
+  prod: "ai.aog.hub",
 }
 function tauriAppId() {
   return app.isPackaged ? TAURI_APP_IDS[CHANNEL] : "ai.opencode.desktop.dev"

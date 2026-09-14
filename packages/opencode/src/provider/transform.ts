@@ -777,6 +777,14 @@ function googleThinkingVariants(model: Provider.Model): Record<string, Record<st
 export function variants(model: Provider.Model): Record<string, Record<string, any>> {
   if (!model.capabilities.reasoning) return {}
 
+  if (model.providerID === "forge") {
+    // Forge routes every model through an OpenRouter-style gateway, so effort
+    // is always `reasoning: { effort }` — including free qwen/kimi/deepseek
+    // variants the generic openai-compatible denylist below would exclude,
+    // and `big-pickle` which is denied by id there.
+    return Object.fromEntries(WIDELY_SUPPORTED_EFFORTS.map((effort) => [effort, { reasoning: { effort } }]))
+  }
+
   const id = model.id.toLowerCase()
   const glm52 = ["glm-5.2", "glm-5-2", "glm-5p2"].some(
     (name) => id.includes(name) || model.api.id.toLowerCase().includes(name),

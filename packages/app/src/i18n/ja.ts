@@ -1,5 +1,5 @@
 export const dict = {
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "[AoG] Hub",
   "desktop.menu.file": "ファイル",
   "desktop.menu.edit": "編集",
   "desktop.menu.view": "表示",
@@ -514,7 +514,7 @@ export const dict = {
   "help.tabs.title": "タブのご紹介",
   "help.tabs.description": "タブを使って作業と進行中のセッションを整理できます",
   "help.tabs.date": "7月14日",
-  "help.tabs.introduction": "OpenCode Desktopでタブを中心とした操作ができるようになりました。",
+  "help.tabs.introduction": "[AoG] Hub Desktopでタブを中心とした操作ができるようになりました。",
   "help.tabs.sessions":
     "新しいセッションをタブで開始したり、プロジェクトから既存のセッションを開いたりできます。新しい作業を始めるときは新しいタブを開き、作業が終わったら閉じます。",
   "help.tabs.organize":
@@ -815,7 +815,7 @@ export const dict = {
   "sidebar.project.clearNotifications": "通知をクリア",
   "sidebar.empty.title": "開いているプロジェクトはありません",
   "sidebar.empty.description": "プロジェクトを開いて始めましょう",
-  "app.name.desktop": "OpenCode Desktop",
+  "app.name.desktop": "[AoG] Hub Desktop",
   "settings.section.desktop": "デスクトップ",
   "settings.section.server": "サーバー",
   "settings.tab.general": "一般",
@@ -895,7 +895,7 @@ export const dict = {
   "settings.general.row.releaseNotes.title": "リリースノート",
   "settings.general.row.releaseNotes.description": "アップデート後に「新機能」ポップアップを表示",
   "settings.updates.row.startup.title": "起動時にアップデートを確認",
-  "settings.updates.row.startup.description": "OpenCode の起動時に自動でアップデートを確認します",
+  "settings.updates.row.startup.description": "[AoG] Hub の起動時に自動でアップデートを確認します",
   "settings.updates.row.check.title": "アップデートを確認",
   "settings.updates.row.check.description": "手動でアップデートを確認し、利用可能ならインストールします",
   "settings.updates.action.checkNow": "今すぐ確認",
@@ -903,7 +903,7 @@ export const dict = {
   "settings.updates.action.downloading": "ダウンロード中...",
   "settings.updates.action.installing": "インストール中...",
   "settings.updates.toast.latest.title": "最新です",
-  "settings.updates.toast.latest.description": "OpenCode は最新バージョンです。",
+  "settings.updates.toast.latest.description": "[AoG] Hub は最新バージョンです。",
   "sound.option.none": "なし",
   "sound.option.alert01": "アラート 01",
   "sound.option.alert02": "アラート 02",

@@ -9,7 +9,9 @@ import { app } from "electron"
 const execFileAsync = promisify(execFile)
 const root = dirname(fileURLToPath(import.meta.url))
 const stateHome = process.env.XDG_STATE_HOME
-const desktopStateNames = ["ai.opencode.desktop.dev", "ai.opencode.desktop.beta", "ai.opencode.desktop"]
+// Hub-only daemon state. Never adopt the upstream OpenCode state dirs —
+// sharing a background service is what made the two desktops fight.
+const desktopStateNames = ["ai.aog.hub.dev", "ai.aog.hub.beta", "ai.aog.hub"]
 
 type Logger = {
   log(message: string, meta?: Record<string, unknown>): void

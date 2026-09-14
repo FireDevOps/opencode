@@ -43,6 +43,29 @@ describe("layout deep links", () => {
     expect(parseDeepLink("opencode://open-project?directory=/tmp/demo")).toBe("/tmp/demo")
   })
 
+  test("parses forge-scheme deep links", () => {
+    expect(parseDeepLink("forge://open-project?directory=/tmp/demo")).toBe("/tmp/demo")
+    expect(parseNewSessionDeepLink("forge://new-session?directory=/tmp/demo&prompt=hello%20world")).toEqual({
+      directory: "/tmp/demo",
+      prompt: "hello world",
+    })
+  })
+
+  test("parses devhub-scheme deep links", () => {
+    expect(parseDeepLink("devhub://open-project?directory=/tmp/demo")).toBe("/tmp/demo")
+    expect(parseNewSessionDeepLink("devhub://new-session?directory=/tmp/demo")).toEqual({
+      directory: "/tmp/demo",
+    })
+  })
+
+  test("parses hub-scheme deep links", () => {
+    expect(parseDeepLink("hub://open-project?directory=/tmp/demo")).toBe("/tmp/demo")
+    expect(parseNewSessionDeepLink("hub://new-session?directory=/tmp/demo&prompt=hi")).toEqual({
+      directory: "/tmp/demo",
+      prompt: "hi",
+    })
+  })
+
   test("ignores non-project deep links", () => {
     expect(parseDeepLink("opencode://other?directory=/tmp/demo")).toBeUndefined()
     expect(parseDeepLink("https://example.com")).toBeUndefined()

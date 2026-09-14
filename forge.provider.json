@@ -1,0 +1,27 @@
+{
+  "$schema": "https://github.com/FireDevOps/opencode/blob/dev/packages/opencode/src/config/config.ts",
+  "provider": {
+    "forge": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Forge",
+      "options": {
+        "baseURL": "https://YOUR-FORGE-SITE/forge/v1",
+        "apiKey": "{env:FORGE_API_KEY}"
+      },
+      "models": {
+        "big-pickle": {
+          "name": "Big Pickle",
+          "reasoning": true
+        },
+        "forge-dev-1": {
+          "name": "Forge Dev 1",
+          "reasoning": true
+        },
+        "forge-review-1": {
+          "name": "Forge Review 1",
+          "reasoning": true
+        }
+      }
+    }
+  }
+}

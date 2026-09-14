@@ -1,0 +1,8 @@
+/* [AoG] Hub backdrop: branded background behind the app shell and boot splash. */
+body {
+  background-color: #0d0b14;
+  background-image: url("./assets/hub-background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

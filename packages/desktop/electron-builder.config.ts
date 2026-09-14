@@ -36,13 +36,13 @@ const channel = (() => {
 })()
 
 const APP_IDS = {
-  dev: "ai.opencode.desktop.dev",
-  beta: "ai.opencode.desktop.beta",
-  prod: "ai.opencode.desktop",
+  dev: "ai.aog.hub.dev",
+  beta: "ai.aog.hub.beta",
+  prod: "ai.aog.hub",
 } as const
 
 const getBase = (appId: string): Configuration => ({
-  artifactName: "opencode-desktop-${os}-${arch}.${ext}",
+  artifactName: "aog-hub-${os}-${arch}.${ext}",
   directories: {
     output: "dist",
     buildResources: "resources",
@@ -86,8 +86,8 @@ const getBase = (appId: string): Configuration => ({
     sign: true,
   },
   protocols: {
-    name: "OpenCode",
-    schemes: ["opencode"],
+    name: "Hub",
+    schemes: ["hub"],
   },
   win: {
     icon: `resources/icons/icon.ico`,
@@ -102,6 +102,9 @@ const getBase = (appId: string): Configuration => ({
     perMachine: false,
     installerIcon: `resources/icons/icon.ico`,
     installerHeaderIcon: `resources/icons/icon.ico`,
+    // Never remove user data on uninstall, and never mistake the upstream
+    // OpenCode install for ours: separate folders, separate identity.
+    deleteAppDataOnUninstall: false,
   },
   linux: {
     icon: `resources/icons`,
@@ -122,36 +125,60 @@ function getConfig() {
   const appId = APP_IDS[channel]
   const base = getBase(appId)
 
+  // Explicit per-channel GUIDs so Windows Add/Remove Programs (and the
+  // installer's running-app detection) can never confuse Hub with the
+  // upstream OpenCode desktop installed on the same machine.
+  const guids = {
+    dev: "1103e8d8-a5f6-420b-88b3-d30ff134ca97",
+    beta: "d6698073-6f30-462d-8748-3343f9220aee",
+    prod: "9d5c6de1-b14d-4ac8-bc8c-2bff0b6c9aab",
+  } as const
+
   switch (channel) {
     case "dev": {
       return {
         ...base,
         appId,
-        productName: "OpenCode Dev",
+        productName: "[AoG] Hub Dev",
+        nsis: {
+          ...base.nsis,
+          guid: guids.dev,
+          uninstallDisplayName: "[AoG] Hub Dev",
+        },
         deb: { fpm: [metainfoFpm(appId)] },
-        rpm: { packageName: "opencode-dev", fpm: [metainfoFpm(appId)] },
+        rpm: { packageName: "aog-hub-dev", fpm: [metainfoFpm(appId)] },
       }
     }
     case "beta": {
       return {
         ...base,
         appId,
-        productName: "OpenCode Beta",
-        protocols: { name: "OpenCode Beta", schemes: ["opencode"] },
-        publish: { provider: "github", owner: "anomalyco", repo: "opencode-beta", channel: "latest" },
+        productName: "[AoG] Hub Beta",
+        protocols: { name: "[AoG] Hub Beta", schemes: ["hub"] },
+        publish: { provider: "github", owner: "FireDevOps", repo: "opencode", channel: "latest" },
+        nsis: {
+          ...base.nsis,
+          guid: guids.beta,
+          uninstallDisplayName: "[AoG] Hub Beta",
+        },
         deb: { fpm: [metainfoFpm(appId)] },
-        rpm: { packageName: "opencode-beta", fpm: [metainfoFpm(appId)] },
+        rpm: { packageName: "aog-hub-beta", fpm: [metainfoFpm(appId)] },
       }
     }
     case "prod": {
       return {
         ...base,
         appId,
-        productName: "OpenCode",
-        protocols: { name: "OpenCode", schemes: ["opencode"] },
-        publish: { provider: "github", owner: "anomalyco", repo: "opencode", channel: "latest" },
+        productName: "[AoG] Hub",
+        protocols: { name: "[AoG] Hub", schemes: ["hub"] },
+        publish: { provider: "github", owner: "FireDevOps", repo: "opencode", channel: "latest" },
+        nsis: {
+          ...base.nsis,
+          guid: guids.prod,
+          uninstallDisplayName: "[AoG] Hub",
+        },
         deb: { fpm: [metainfoFpm(appId), legacyDesktopEntryFpm] },
-        rpm: { packageName: "opencode", fpm: [metainfoFpm(appId), legacyDesktopEntryFpm] },
+        rpm: { packageName: "aog-hub", fpm: [metainfoFpm(appId), legacyDesktopEntryFpm] },
       }
     }
   }

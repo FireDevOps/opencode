@@ -1,5 +1,5 @@
 export const dict = {
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "[AoG] Hub",
   "desktop.menu.file": "Файл",
   "desktop.menu.edit": "Правка",
   "desktop.menu.view": "Вид",
@@ -39,11 +39,11 @@ export const dict = {
   "desktop.menu.nextProject": "Следующий проект",
   "desktop.menu.minimize": "Свернуть",
   "desktop.menu.maximize": "Развернуть",
-  "desktop.menu.documentation": "Документация OpenCode",
+  "desktop.menu.documentation": "Документация [AoG] Hub",
   "desktop.menu.supportForum": "Форум поддержки",
   "desktop.menu.shareFeedback": "Отправить отзыв",
   "desktop.menu.reportBug": "Сообщить об ошибке",
-  "desktop.menu.ariaLabel": "Меню OpenCode",
+  "desktop.menu.ariaLabel": "Меню [AoG] Hub",
 
   "desktop.updater.dialog.checkFailed.message": "Не удалось проверить наличие обновлений.",
   "desktop.updater.dialog.checkFailed.title": "Ошибка обновления",
@@ -58,9 +58,9 @@ export const dict = {
   "desktop.recovery.action.exportLogs": "Экспортировать журналы",
   "desktop.recovery.action.keepWaiting": "Продолжить ожидание",
   "desktop.recovery.action.quit": "Выйти",
-  "desktop.recovery.loadFailed": "Не удалось загрузить OpenCode",
-  "desktop.recovery.terminated": "Окно OpenCode неожиданно завершило работу",
-  "desktop.recovery.unresponsive": "OpenCode не отвечает",
+  "desktop.recovery.loadFailed": "Не удалось загрузить [AoG] Hub",
+  "desktop.recovery.terminated": "Окно [AoG] Hub неожиданно завершило работу",
+  "desktop.recovery.unresponsive": "[AoG] Hub не отвечает",
   "desktop.recovery.unresponsive.detail": "Можно снова запустить приложение, открыть журналы или продолжить ожидание.",
   "desktop.recovery.loadFailed.detail": "Окно: {{window}}\nURL: {{url}}\nОшибка: {{code}} {{description}}",
   "desktop.recovery.terminated.detail": "Окно: {{window}}\nПричина: {{reason}}\nКод: {{code}}",
@@ -513,12 +513,12 @@ export const dict = {
   "wsl.onboarding.needAnotherDistroHint": "Установите дистрибутив Linux из каталога WSL",
   "wsl.onboarding.wslNotInstalled.title": "WSL не установлена",
   "wsl.onboarding.wslNotInstalled.description":
-    "Для добавления сервера WSL в OpenCode требуется WSL (Подсистема Windows для Linux)",
+    "Для добавления сервера WSL в [AoG] Hub требуется WSL (Подсистема Windows для Linux)",
   "wsl.onboarding.wslUnavailable.title": "WSL недоступна",
-  "wsl.onboarding.wslUnavailable.description": "OpenCode не смог проверить WSL на этом компьютере.",
+  "wsl.onboarding.wslUnavailable.description": "[AoG] Hub не смог проверить WSL на этом компьютере.",
   "wsl.onboarding.installWsl": "Установить WSL",
   "wsl.onboarding.windowsRestartRequired":
-    "Перезапустите Windows, чтобы завершить установку WSL, затем снова откройте OpenCode.",
+    "Перезапустите Windows, чтобы завершить установку WSL, затем снова откройте [AoG] Hub.",
   "wsl.onboarding.next": "Далее",
   "wsl.onboarding.refresh": "Обновить",
   "wsl.onboarding.allDistrosAdded": "Все установленные дистрибутивы уже добавлены.",
@@ -543,7 +543,7 @@ export const dict = {
   "help.tabs.title": "Представляем вкладки",
   "help.tabs.description": "Организуйте работу и активные сессии с помощью вкладок",
   "help.tabs.date": "14 июля",
-  "help.tabs.introduction": "Теперь работа в OpenCode Desktop организована с помощью вкладок.",
+  "help.tabs.introduction": "Теперь работа в [AoG] Hub Desktop организована с помощью вкладок.",
   "help.tabs.sessions":
     "Начните новую сессию во вкладке или откройте существующую сессию из любого проекта. Открывайте новую вкладку, когда начинаете новую задачу, и закрывайте её по завершении.",
   "help.tabs.organize":
@@ -668,7 +668,7 @@ export const dict = {
   "toast.session.listFailed.title": "Не удалось загрузить сессии для {{project}}",
 
   "toast.update.title": "Доступно обновление",
-  "toast.update.description": "Новая версия OpenCode ({{version}}) доступна для установки.",
+  "toast.update.description": "Новая версия [AoG] Hub ({{version}}) доступна для установки.",
   "toast.update.action.installRestart": "Установить и перезапустить",
   "toast.update.action.notYet": "Пока нет",
 
@@ -703,7 +703,7 @@ export const dict = {
   "error.chain.modelNotFound": "Модель не найдена: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Проверьте названия провайдера и модели в конфигурации (opencode.json)",
   "error.chain.mcpFailed":
-    'MCP-сервер "{{name}}" завершился с ошибкой. Обратите внимание: OpenCode пока не поддерживает MCP-авторизацию.',
+    'MCP-сервер "{{name}}" завершился с ошибкой. Обратите внимание: [AoG] Hub пока не поддерживает MCP-авторизацию.',
   "error.chain.providerAuthFailed": "Ошибка аутентификации провайдера ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Не удалось инициализировать провайдера "{{provider}}". Проверьте учётные данные и конфигурацию.',
@@ -886,7 +886,7 @@ export const dict = {
   "sidebar.workspaces.enable": "Включить рабочие пространства",
   "sidebar.workspaces.disable": "Отключить рабочие пространства",
   "sidebar.gettingStarted.title": "Начало работы",
-  "sidebar.gettingStarted.line1": "OpenCode включает бесплатные модели, чтобы вы могли начать сразу.",
+  "sidebar.gettingStarted.line1": "[AoG] Hub включает бесплатные модели, чтобы вы могли начать сразу.",
   "sidebar.gettingStarted.line2":
     "Подключите любого провайдера для использования моделей, включая Claude, GPT, Gemini и др.",
   "sidebar.project.recentSessions": "Недавние сессии",
@@ -895,7 +895,7 @@ export const dict = {
   "sidebar.empty.title": "Нет открытых проектов",
   "sidebar.empty.description": "Откройте проект, чтобы начать",
 
-  "app.name.desktop": "OpenCode Desktop",
+  "app.name.desktop": "[AoG] Hub Desktop",
   "settings.section.desktop": "Приложение",
   "settings.section.server": "Сервер",
   "settings.tab.general": "Основные",
@@ -913,18 +913,18 @@ export const dict = {
   "settings.general.section.display": "Экран",
 
   "settings.general.row.language.title": "Язык",
-  "settings.general.row.language.description": "Изменить язык отображения OpenCode",
+  "settings.general.row.language.description": "Изменить язык отображения [AoG] Hub",
   "settings.general.row.shell.title": "Оболочка терминала",
   "settings.general.row.shell.description":
     "Выберите оболочку для терминала. Совместимые оболочки также используются агентом при вызове инструментов.",
   "settings.general.row.shell.autoDefault": "Авто (по умолчанию)",
   "settings.general.row.shell.terminalOnly": "только терминал",
   "settings.general.row.appearance.title": "Внешний вид",
-  "settings.general.row.appearance.description": "Настройте внешний вид OpenCode на вашем устройстве",
+  "settings.general.row.appearance.description": "Настройте внешний вид [AoG] Hub на вашем устройстве",
   "settings.general.row.colorScheme.title": "Цветовая схема",
-  "settings.general.row.colorScheme.description": "Выберите, следует ли OpenCode системной, светлой или тёмной теме",
+  "settings.general.row.colorScheme.description": "Выберите, следует ли [AoG] Hub системной, светлой или тёмной теме",
   "settings.general.row.theme.title": "Тема",
-  "settings.general.row.theme.description": "Настройте оформление OpenCode.",
+  "settings.general.row.theme.description": "Настройте оформление [AoG] Hub.",
   "settings.general.row.font.title": "Шрифт кода",
   "settings.general.row.font.description": "Настройте шрифт, используемый в блоках кода",
   "settings.general.row.terminalFont.title": "Шрифт терминала",
@@ -981,7 +981,7 @@ export const dict = {
   "settings.general.row.releaseNotes.description": 'Показывать всплывающие окна "Что нового" после обновлений',
 
   "settings.updates.row.startup.title": "Проверять обновления при запуске",
-  "settings.updates.row.startup.description": "Автоматически проверять обновления при запуске OpenCode",
+  "settings.updates.row.startup.description": "Автоматически проверять обновления при запуске [AoG] Hub",
   "settings.updates.row.check.title": "Проверить обновления",
   "settings.updates.row.check.description": "Проверить обновления вручную и установить, если доступны",
   "settings.updates.action.checkNow": "Проверить сейчас",
@@ -989,7 +989,7 @@ export const dict = {
   "settings.updates.action.downloading": "Загрузка...",
   "settings.updates.action.installing": "Установка...",
   "settings.updates.toast.latest.title": "У вас последняя версия",
-  "settings.updates.toast.latest.description": "Вы используете последнюю версию OpenCode.",
+  "settings.updates.toast.latest.description": "Вы используете последнюю версию [AoG] Hub.",
   "sound.option.none": "Нет",
   "sound.option.alert01": "Alert 01",
   "sound.option.alert02": "Alert 02",

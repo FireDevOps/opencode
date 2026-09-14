@@ -1,16 +1,19 @@
 import { type ComponentProps } from "solid-js"
 
+// [AoG] Hub mark: rounded square + H bars + hub node. Theme-aware like the
+// original mark so it adapts to light/dark themes automatically.
 export const Mark = (props: { class?: string }) => {
   return (
     <svg
       data-component="logo-mark"
       classList={{ [props.class ?? ""]: !!props.class }}
-      viewBox="0 0 16 20"
+      viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path data-slot="logo-logo-mark-shadow" d="M12 16H4V8H12V16Z" fill="var(--icon-weak-base)" />
-      <path data-slot="logo-logo-mark-o" d="M12 4H4V16H12V4ZM16 20H0V0H16V20Z" fill="var(--icon-strong-base)" />
+      <rect data-slot="logo-mark-bg" x="1" y="1" width="18" height="18" rx="4.4" fill="var(--icon-strong-base)" />
+      <path data-slot="logo-mark-h" d="M5 5h2.6v10H5zM12.4 5H15v10h-2.6zM5 8.9h10v2.2H5z" fill="var(--background-base)" />
+      <circle data-slot="logo-mark-node" cx="10" cy="10" r="2.3" fill="#8A7BB8" />
     </svg>
   )
 }
@@ -25,8 +28,12 @@ export const Splash = (props: Pick<ComponentProps<"svg">, "ref" | "class">) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M60 80H20V40H60V80Z" fill="var(--icon-base)" />
-      <path d="M60 20H20V80H60V20ZM80 100H0V0H80V100Z" fill="var(--icon-strong-base)" />
+      <rect x="8" y="14" width="64" height="64" rx="15" fill="var(--icon-strong-base)" />
+      <path
+        d="M25.6 28.4h9.3v35.2h-9.3zM45.1 28.4h9.3v35.2h-9.3zM25.6 41.9h28.8v8h-28.8z"
+        fill="var(--background-base)"
+      />
+      <circle cx="40" cy="46" r="8.2" fill="#8A7BB8" />
     </svg>
   )
 }
@@ -35,27 +42,27 @@ export const Logo = (props: { class?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 234 42"
+      viewBox="0 0 132 42"
       fill="none"
       classList={{ [props.class ?? ""]: !!props.class }}
     >
       <g>
-        <path d="M18 30H6V18H18V30Z" fill="var(--icon-weak-base)" />
-        <path d="M18 12H6V30H18V12ZM24 36H0V6H24V36Z" fill="var(--icon-base)" />
-        <path d="M48 30H36V18H48V30Z" fill="var(--icon-weak-base)" />
-        <path d="M36 30H48V12H36V30ZM54 36H36V42H30V6H54V36Z" fill="var(--icon-base)" />
-        <path d="M84 24V30H66V24H84Z" fill="var(--icon-weak-base)" />
-        <path d="M84 24H66V30H84V36H60V6H84V24ZM66 18H78V12H66V18Z" fill="var(--icon-base)" />
-        <path d="M108 36H96V18H108V36Z" fill="var(--icon-weak-base)" />
-        <path d="M108 12H96V36H90V6H108V12ZM114 36H108V12H114V36Z" fill="var(--icon-base)" />
-        <path d="M144 30H126V18H144V30Z" fill="var(--icon-weak-base)" />
-        <path d="M144 12H126V30H144V36H120V6H144V12Z" fill="var(--icon-strong-base)" />
-        <path d="M168 30H156V18H168V30Z" fill="var(--icon-weak-base)" />
-        <path d="M168 12H156V30H168V12ZM174 36H150V6H174V36Z" fill="var(--icon-strong-base)" />
-        <path d="M198 30H186V18H198V30Z" fill="var(--icon-weak-base)" />
-        <path d="M198 12H186V30H198V12ZM204 36H180V6H198V0H204V36Z" fill="var(--icon-strong-base)" />
-        <path d="M234 24V30H216V24H234Z" fill="var(--icon-weak-base)" />
-        <path d="M216 12V18H228V12H216ZM234 24H216V30H234V36H210V6H234V24Z" fill="var(--icon-strong-base)" />
+        <rect x="2" y="2" width="38" height="38" rx="9" fill="var(--icon-strong-base)" />
+        <path
+          d="M12.4 12.4h5.5v17.2h-5.5zM24.1 12.4h5.5v17.2h-5.5zM12.4 19.4h17.2v3.2H12.4z"
+          fill="var(--background-base)"
+        />
+        <circle cx="21" cy="21" r="4.8" fill="#8A7BB8" />
+        <text
+          x="48"
+          y="31"
+          font-size="27"
+          font-weight="800"
+          font-family="inherit"
+          fill="var(--icon-strong-base)"
+        >
+          Hub
+        </text>
       </g>
     </svg>
   )

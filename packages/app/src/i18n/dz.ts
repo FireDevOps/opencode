@@ -1,5 +1,5 @@
 export const dict: Record<string, string> = {
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "[AoG] Hub",
   "desktop.menu.file": "ཡིག༌སྣོད",
   "desktop.menu.edit": "ཞུན༌དག",
   "desktop.menu.view": "བསམ༌འཆར",
@@ -39,11 +39,11 @@ export const dict: Record<string, string> = {
   "desktop.menu.nextProject": "ལས་གཞི་རྗེས་མ།",
   "desktop.menu.minimize": "ཉུང་ཉུང་བཟོ།",
   "desktop.menu.maximize": "ཆེར་བསྐྱེད་འབད།",
-  "desktop.menu.documentation": "OpenCode ཡིག་ཆ།",
+  "desktop.menu.documentation": "[AoG] Hub ཡིག་ཆ།",
   "desktop.menu.supportForum": "རྒྱབ་སྐྱོར་གླེང་སྟེགས།",
   "desktop.menu.shareFeedback": "བསམ་འཆར་བརྗེ་རེས།",
   "desktop.menu.reportBug": "རྐྱེན་ཅིག་སྙན་ཞུ་འབད།",
-  "desktop.menu.ariaLabel": "OpenCode དཀར་ཆག།",
+  "desktop.menu.ariaLabel": "[AoG] Hub དཀར་ཆག།",
   "desktop.updater.dialog.checkFailed.message": "དུས་མཐུན་ཞིབ་དཔྱད་འཐུས་ཤོར་འབྱུང་ཡོདཔ།",
   "desktop.updater.dialog.checkFailed.title": "དུས་མཐུན་འཛོལ་བ།",
   "desktop.updater.dialog.upToDate.message": "ཁྱོད་དུས་དང་བསྟུན།",
@@ -56,8 +56,8 @@ export const dict: Record<string, string> = {
   "desktop.recovery.action.exportLogs": "ཕྱིར་འདྲེན་དྲན་དེབ་ཚུ།",
   "desktop.recovery.action.keepWaiting": "བསྒུག་སྡོད།",
   "desktop.recovery.action.quit": "བཞག༌ནི",
-  "desktop.recovery.loadFailed": "OpenCode མངོན་གསལ་འབད་ནི་ལུ་འཐུས་ཤོར་བྱུང་ཡོདཔ།",
-  "desktop.recovery.terminated": "OpenCode སྒོ་སྒྲིག་འདི་ རེ་བ་མེད་པར་ མཇུག་བསྡུ་ཡོདཔ།",
+  "desktop.recovery.loadFailed": "[AoG] Hub མངོན་གསལ་འབད་ནི་ལུ་འཐུས་ཤོར་བྱུང་ཡོདཔ།",
+  "desktop.recovery.terminated": "[AoG] Hub སྒོ་སྒྲིག་འདི་ རེ་བ་མེད་པར་ མཇུག་བསྡུ་ཡོདཔ།",
   "desktop.recovery.unresponsive": "OpenCodeགིས་ ལན་གསལ་འབད་མི་བཏུབ།",
   "desktop.recovery.unresponsive.detail":
     "ཁྱོད་ཀྱིས་གློག་རིམ་འདི་ལོག་སྟེ་འགོ་བཙུགས་ཚུགས། དྲན་ཐོ་ཚུ་ཁ་ཕྱེ་ཚུགས། ཡང་ན་བསྒུག་སྡོད་ཚུགས།",
@@ -495,7 +495,7 @@ export const dict: Record<string, string> = {
   "wsl.onboarding.wslUnavailable.description": "OpenCodeགིས་ འཕྲུལ་ཆས་འདི་གུ་ WSL བདེན་སྦྱོར་འབད་མ་ཚུགས།",
   "wsl.onboarding.installWsl": "WSLགཞི་བཙུགས་འབད།",
   "wsl.onboarding.windowsRestartRequired":
-    "WSL གཞི་བཙུགས་འབད་ནི་མཇུག་བསྡུ་ནིའི་དོན་ལུ་ Windows ལོག་འགོ་བཙུགསཔ་དང་ དེ་ལས་ OpenCode ལོག་ཁ་ཕྱེ།",
+    "WSL གཞི་བཙུགས་འབད་ནི་མཇུག་བསྡུ་ནིའི་དོན་ལུ་ Windows ལོག་འགོ་བཙུགསཔ་དང་ དེ་ལས་ [AoG] Hub ལོག་ཁ་ཕྱེ།",
   "wsl.onboarding.next": "ཤུལ༌མའི",
   "wsl.onboarding.refresh": "གསརཔ་བཟོ།",
   "wsl.onboarding.allDistrosAdded": "གཞི་བཙུགས་འབད་ཡོད་པའི་ཌིསི་ཊོ་ཚུ་ཆ་མཉམ་ཧེ་མ་ལས་ཁ་སྐོང་བརྐྱབ་ཡོདཔ་ཨིན།",
@@ -520,7 +520,7 @@ export const dict: Record<string, string> = {
   "help.tabs.title": "མཆོང་ལྡེ་ངོ་སྤྲོད་འབད་དོ།",
   "help.tabs.description": "མཆོང་ལྡེ་ཚུ་དང་གཅིག་ཁར་ ཁྱོད་རའི་ལཱ་དང་ ཤུགས་ལྡན་ལཱ་ཡུན་ཚུ་ གོ་སྒྲིག་འབད།",
   "help.tabs.date": "སྤྱི་ཟླ་༧ པའི་ཚེས་༡༤།",
-  "help.tabs.introduction": "OpenCode ཌེཀསི་ཊོཔ་འདི་ད་ལྟོ་མཆོང་ལྡེ་ཚུ་གི་མཐའ་འཁོར་ལུ་བཟོ་བསྐྲུན་འབད་ཡོདཔ་ཨིན།",
+  "help.tabs.introduction": "[AoG] Hub ཌེཀསི་ཊོཔ་འདི་ད་ལྟོ་མཆོང་ལྡེ་ཚུ་གི་མཐའ་འཁོར་ལུ་བཟོ་བསྐྲུན་འབད་ཡོདཔ་ཨིན།",
   "help.tabs.sessions":
     "མཆོང་ལྡེ་ཅིག་ནང་ལཱ་ཡུན་གསརཔ་འགོ་བཙུགས་ ཡང་ན་ ཁྱོད་རའི་ལས་འགུལ་གང་རུང་ཅིག་ལས་ ད་ལྟོ་ཡོད་པའི་ལཱ་ཡུན་ཅིག་ཁ་ཕྱེ། ཁྱོད་ཀྱིས་ག་ཅི་ཡང་གསརཔ་འགོ་བཙུགས་པའི་སྐབས་ མཆོང་ལྡེ་གསརཔ་ཅིག་ཁ་ཕྱེ་ཞིནམ་ལས་ ཁྱོད་ཀྱིས་འབད་ཚརཝ་ད་ ཁ་བསྡམས།",
   "help.tabs.organize":
@@ -632,7 +632,7 @@ export const dict: Record<string, string> = {
   "toast.session.listFailed.title": "{{project}}གི་དོན་ལུ་ལཱ་ཡུན་ཚུ་མངོན་གསལ་འབད་ནི་ལུ་འཐུས་ཤོར་འབྱུང་ཡོདཔ།",
   "toast.project.reloadFailed.title": "{{project}}ཡང་བསྐྱར་མངོན་གསལ་འབད་ནི་ལུ་འཐུས་ཤོར་འབྱུང་ཡོདཔ།",
   "toast.update.title": "དུས་མཐུན་བཟོ་ཚུགས།",
-  "toast.update.description": "OpenCode ({{version}}) གི་ཐོན་རིམ་གསརཔ་ཅིག་ ད་ལྟོ་གཞི་བཙུགས་འབད་ནི་ལུ་འཐོབ་ཚུགས།",
+  "toast.update.description": "[AoG] Hub ({{version}}) གི་ཐོན་རིམ་གསརཔ་ཅིག་ ད་ལྟོ་གཞི་བཙུགས་འབད་ནི་ལུ་འཐོབ་ཚུགས།",
   "toast.update.action.installRestart": "གཞི་བཙུགས་དང་ལོག་འགོ་བཙུགས།",
   "toast.update.action.notYet": "ད༌ལྟོ༌མེན༌པའི",
   "error.page.title": "ག་ཅི་ཅིག་འཛོལ་སོང་ནུག།",
@@ -673,7 +673,7 @@ export const dict: Record<string, string> = {
   "error.chain.modelNotFound": "དཔེ་ཚད་འཚོལ་མ་ཐོབ།: {{provider}}/{{model}}",
   "error.chain.checkConfig": "ཁྱོད་ཀྱི་རིམ་སྒྲིག་ (opencode.json) བྱིན་མི་/དཔེ་ཚད་མིང་ཚུ་ཞིབ་དཔྱད་འབད།",
   "error.chain.mcpFailed":
-    'MCP སར་བར་ "{{name}}" འཐུས་ཤོར་བྱུང་ཡོདཔ། དྲན་འཛིན་ OpenCode གིས་ ད་ལྟོ་ཡང་ MCP བདེན་བཤད་ལུ་རྒྱབ་སྐྱོར་མི་འབད།',
+    'MCP སར་བར་ "{{name}}" འཐུས་ཤོར་བྱུང་ཡོདཔ། དྲན་འཛིན་ [AoG] Hub གིས་ ད་ལྟོ་ཡང་ MCP བདེན་བཤད་ལུ་རྒྱབ་སྐྱོར་མི་འབད།',
   "error.chain.providerAuthFailed": "བྱིན་མི་བདེན་བཤད་འཐུས་ཤོར་བྱུང་ཡོདཔ།({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'བྱིན་མི་ "{{provider}}" འགོ་བཙུགས་ནི་ལུ་འཐུས་ཤོར་འབྱུང་ཡོདཔ། ངོ་རྟགས་དང་རིམ་སྒྲིག་ཞིབ་དཔྱད་འབད།',
@@ -883,7 +883,7 @@ export const dict: Record<string, string> = {
   "sidebar.workspaces.enable": "ལཱ་གི་ས་སྒོ་ཚུ་ལྕོགས་ཅན་བཟོ།",
   "sidebar.workspaces.disable": "ལཱ་གི་ས་སྒོ་ཚུ་ལྕོགས་མིན་བཟོ།",
   "sidebar.gettingStarted.title": "འགོ་བཙུགས་དོ།",
-  "sidebar.gettingStarted.line1": "OpenCode ནང་རིན་མེད་དཔེ་ཚད་ཚུ་ཚུད་དེ་ཡོདཔ་ལས་ཁྱོད་ཀྱིས་དེ་འཕྲལ་ལས་འགོ་བཙུགས་བཏུབ།",
+  "sidebar.gettingStarted.line1": "[AoG] Hub ནང་རིན་མེད་དཔེ་ཚད་ཚུ་ཚུད་དེ་ཡོདཔ་ལས་ཁྱོད་ཀྱིས་དེ་འཕྲལ་ལས་འགོ་བཙུགས་བཏུབ།",
   "sidebar.gettingStarted.line2":
     "དཔེ་ཚད་ཚུ་ལག་ལེན་འཐབ་ནི་ལུ་ བྱིན་མི་གང་རུང་ཅིག་མཐུད།, inc. Claude དང་ GPT Gemini སོགས།",
   "sidebar.project.recentSessions": "འཕྲལ་གྱི་ལཱ་ཡུན་ཚུ།",
@@ -923,7 +923,7 @@ export const dict: Record<string, string> = {
     "སེལ་འཐུ་འབད་ཡོད་པའི་སྐད་ཡིག་བསྒྱུར་བཅོས་མ་འབད་བར་ གློག་རིམ་ཆ་ཚང་སྒྲིག་བཀོད་ཁ་ཕྱོགས་བང་བཙོང་འབད།",
   "debugBar.direction.ltr": "LTR།",
   "debugBar.direction.rtl": "RTL།",
-  "app.name.desktop": "OpenCode ཌེཀསི་ཊོཔ།",
+  "app.name.desktop": "[AoG] Hub ཌེཀསི་ཊོཔ།",
   "settings.section.desktop": "ཌེཀསི་ཊོཔ།",
   "settings.section.server": "སར་བར།",
   "settings.tab.general": "སྤྱིར༌བཏང",
@@ -949,7 +949,7 @@ export const dict: Record<string, string> = {
     "OpenCodeའདི་ཁྱོད་རའི་ཐབས་འཕྲུལ་གུ་ག་དེ་སྦེ་མཐོངམ་ཨིན་ན་སྲོལ་སྒྲིག་འབད།",
   "settings.general.row.colorScheme.title": "ཚོས་གཞིའི་འཆར་གཞི།",
   "settings.general.row.colorScheme.description":
-    "OpenCode གིས་ རིམ་ལུགས་དང་ འོད་ ཡང་ན་ གནགཔོ་གི་བརྗོད་དོན་ལུ་ རྗེས་སུ་འཇུག་ནི་ཨིན་ན་ གདམ་ཁ་རྐྱབས།",
+    "[AoG] Hub གིས་ རིམ་ལུགས་དང་ འོད་ ཡང་ན་ གནགཔོ་གི་བརྗོད་དོན་ལུ་ རྗེས་སུ་འཇུག་ནི་ཨིན་ན་ གདམ་ཁ་རྐྱབས།",
   "settings.general.row.theme.title": "བརྗོད༌དོན",
   "settings.general.row.theme.description": "OpenCodeའདི་བརྗོད་དོན་ག་དེ་སྦེ་ཡོདཔ་ཨིན་ན་སྲོལ་སྒྲིག་འབད།",
   "settings.general.row.font.title": "ཨང་རྟགས་ཡིག་གཟུགས།",
@@ -1005,7 +1005,7 @@ export const dict: Record<string, string> = {
   "settings.general.row.releaseNotes.title": "འགྲེམ་སྤེལ་དྲན་ཐོ།",
   "settings.general.row.releaseNotes.description": "དུས་མཐུན་བཟོ་ཚར་བའི་ཤུལ་ལས་ པོཔ་ཨཔ་གསརཔ་ག་ཅི་ཡོདཔ་ཨིན་ན་སྟོན།",
   "settings.updates.row.startup.title": "འགོ་བཙུགས་གུ་དུས་མཐུན་ཚུ་ཞིབ་དཔྱད་འབད།",
-  "settings.updates.row.startup.description": "OpenCode འགོ་བཙུགསཔ་ད་ རང་བཞིན་གྱིས་དུས་མཐུན་ཚུ་ཞིབ་དཔྱད་འབད།",
+  "settings.updates.row.startup.description": "[AoG] Hub འགོ་བཙུགསཔ་ད་ རང་བཞིན་གྱིས་དུས་མཐུན་ཚུ་ཞིབ་དཔྱད་འབད།",
   "settings.updates.row.check.title": "དུས་མཐུན་ཚུ་ཞིབ་དཔྱད་འབད།",
   "settings.updates.row.check.description":
     "ལག་ཐོག་ལས་དུས་མཐུན་ཚུ་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ འཐོབ་ཚུགས་པ་ཅིན་གཞི་བཙུགས་འབད།",

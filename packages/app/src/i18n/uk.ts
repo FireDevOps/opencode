@@ -1,5 +1,5 @@
 export const dict = {
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "[AoG] Hub",
   "desktop.menu.file": "Файл",
   "desktop.menu.edit": "Редагування",
   "desktop.menu.view": "Вигляд",
@@ -39,11 +39,11 @@ export const dict = {
   "desktop.menu.nextProject": "Наступний проєкт",
   "desktop.menu.minimize": "Згорнути",
   "desktop.menu.maximize": "Розгорнути",
-  "desktop.menu.documentation": "Документація OpenCode",
+  "desktop.menu.documentation": "Документація [AoG] Hub",
   "desktop.menu.supportForum": "Форум підтримки",
   "desktop.menu.shareFeedback": "Надіслати відгук",
   "desktop.menu.reportBug": "Повідомити про помилку",
-  "desktop.menu.ariaLabel": "Меню OpenCode",
+  "desktop.menu.ariaLabel": "Меню [AoG] Hub",
 
   "desktop.updater.dialog.checkFailed.message": "Не вдалося перевірити наявність оновлень.",
   "desktop.updater.dialog.checkFailed.title": "Помилка оновлення",
@@ -58,9 +58,9 @@ export const dict = {
   "desktop.recovery.action.exportLogs": "Експортувати журнали",
   "desktop.recovery.action.keepWaiting": "Продовжити очікування",
   "desktop.recovery.action.quit": "Завершити роботу",
-  "desktop.recovery.loadFailed": "Не вдалося завантажити OpenCode",
-  "desktop.recovery.terminated": "Роботу вікна OpenCode несподівано завершено",
-  "desktop.recovery.unresponsive": "OpenCode не відповідає",
+  "desktop.recovery.loadFailed": "Не вдалося завантажити [AoG] Hub",
+  "desktop.recovery.terminated": "Роботу вікна [AoG] Hub несподівано завершено",
+  "desktop.recovery.unresponsive": "[AoG] Hub не відповідає",
   "desktop.recovery.unresponsive.detail":
     "Ви можете повторно запустити програму, відкрити журнали або продовжити очікування.",
   "desktop.recovery.loadFailed.detail": "Вікно: {{window}}\nURL: {{url}}\nПомилка: {{code}} {{description}}",
@@ -522,12 +522,12 @@ export const dict = {
   "wsl.onboarding.needAnotherDistroHint": "Встановіть дистрибутив Linux із каталогу WSL",
   "wsl.onboarding.wslNotInstalled.title": "WSL не встановлено",
   "wsl.onboarding.wslNotInstalled.description":
-    "Для додавання сервера WSL в OpenCode потрібна WSL (Підсистема Windows для Linux)",
+    "Для додавання сервера WSL в [AoG] Hub потрібна WSL (Підсистема Windows для Linux)",
   "wsl.onboarding.wslUnavailable.title": "WSL недоступна",
-  "wsl.onboarding.wslUnavailable.description": "OpenCode не вдалося перевірити WSL на цьому комп'ютері.",
+  "wsl.onboarding.wslUnavailable.description": "[AoG] Hub не вдалося перевірити WSL на цьому комп'ютері.",
   "wsl.onboarding.installWsl": "Встановити WSL",
   "wsl.onboarding.windowsRestartRequired":
-    "Перезапустіть Windows, щоб завершити встановлення WSL, а потім знову відкрийте OpenCode.",
+    "Перезапустіть Windows, щоб завершити встановлення WSL, а потім знову відкрийте [AoG] Hub.",
   "wsl.onboarding.next": "Далі",
   "wsl.onboarding.refresh": "Оновити",
   "wsl.onboarding.allDistrosAdded": "Усі встановлені дистрибутиви вже додано.",
@@ -552,7 +552,7 @@ export const dict = {
   "help.tabs.title": "Представляємо вкладки",
   "help.tabs.description": "Упорядковуйте роботу й активні сесії за допомогою вкладок",
   "help.tabs.date": "14 липня",
-  "help.tabs.introduction": "OpenCode Desktop тепер побудовано навколо вкладок.",
+  "help.tabs.introduction": "[AoG] Hub Desktop тепер побудовано навколо вкладок.",
   "help.tabs.sessions":
     "Почніть нову сесію у вкладці або відкрийте наявну сесію з будь-якого свого проєкту. Відкривайте нову вкладку, коли починаєте щось нове, і закривайте її після завершення.",
   "help.tabs.organize":
@@ -684,7 +684,7 @@ export const dict = {
   "toast.project.reloadFailed.title": "Не вдалося перезавантажити {{project}}",
 
   "toast.update.title": "Доступне оновлення",
-  "toast.update.description": "Нова версія OpenCode ({{version}}) тепер доступна для встановлення.",
+  "toast.update.description": "Нова версія [AoG] Hub ({{version}}) тепер доступна для встановлення.",
   "toast.update.action.installRestart": "Встановити та перезапустити",
   "toast.update.action.notYet": "Не зараз",
 
@@ -727,7 +727,7 @@ export const dict = {
   "error.chain.modelNotFound": "Модель не знайдено: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Перевірте назви провайдерів/моделей у конфігурації (opencode.json)",
   "error.chain.mcpFailed":
-    'Сервер MCP "{{name}}" не працює. Зверніть увагу, OpenCode ще не підтримує автентифікацію MCP.',
+    'Сервер MCP "{{name}}" не працює. Зверніть увагу, [AoG] Hub ще не підтримує автентифікацію MCP.',
   "error.chain.providerAuthFailed": "Автентифікація провайдера не вдалася ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Не вдалося ініціалізувати провайдера "{{provider}}". Перевірте облікові дані та конфігурацію.',
@@ -958,7 +958,7 @@ export const dict = {
   "sidebar.workspaces.enable": "Увімкнути робочі області",
   "sidebar.workspaces.disable": "Вимкнути робочі області",
   "sidebar.gettingStarted.title": "Початок роботи",
-  "sidebar.gettingStarted.line1": "OpenCode містить безкоштовні моделі, тому ви можете почати негайно.",
+  "sidebar.gettingStarted.line1": "[AoG] Hub містить безкоштовні моделі, тому ви можете почати негайно.",
   "sidebar.gettingStarted.line2":
     "Підключіть будь-якого провайдера, щоб використовувати моделі, включаючи Claude, GPT, Gemini тощо.",
   "sidebar.project.recentSessions": "Нещодавні сесії",
@@ -999,7 +999,7 @@ export const dict = {
   "debugBar.direction.ltr": "LTR",
   "debugBar.direction.rtl": "RTL",
 
-  "app.name.desktop": "OpenCode Desktop",
+  "app.name.desktop": "[AoG] Hub Desktop",
 
   "settings.section.desktop": "Десктопний застосунок",
   "settings.section.server": "Сервер",
@@ -1018,18 +1018,18 @@ export const dict = {
   "settings.general.section.display": "Дисплей",
 
   "settings.general.row.language.title": "Мова",
-  "settings.general.row.language.description": "Змінити мову інтерфейсу OpenCode",
+  "settings.general.row.language.description": "Змінити мову інтерфейсу [AoG] Hub",
   "settings.general.row.shell.title": "Командна оболонка термінала",
   "settings.general.row.shell.description":
     "Виберіть оболонку для термінала. Сумісні оболонки також використовуються для викликів інструментів агента.",
   "settings.general.row.shell.autoDefault": "Автоматично (за замовчуванням)",
   "settings.general.row.shell.terminalOnly": "тільки термінал",
   "settings.general.row.appearance.title": "Зовнішній вигляд",
-  "settings.general.row.appearance.description": "Налаштуйте вигляд OpenCode на вашому пристрої",
+  "settings.general.row.appearance.description": "Налаштуйте вигляд [AoG] Hub на вашому пристрої",
   "settings.general.row.colorScheme.title": "Кольорова схема",
-  "settings.general.row.colorScheme.description": "Виберіть, чи OpenCode використовує системну, світлу або темну тему",
+  "settings.general.row.colorScheme.description": "Виберіть, чи [AoG] Hub використовує системну, світлу або темну тему",
   "settings.general.row.theme.title": "Тема",
-  "settings.general.row.theme.description": "Налаштуйте тему OpenCode.",
+  "settings.general.row.theme.description": "Налаштуйте тему [AoG] Hub.",
   "settings.general.row.font.title": "Шрифт коду",
   "settings.general.row.font.description": "Налаштуйте шрифт, який використовується в блоках коду",
   "settings.general.row.terminalFont.title": "Шрифт термінала",
@@ -1086,7 +1086,7 @@ export const dict = {
   "settings.general.row.releaseNotes.description": 'Показувати спливаючі вікна "Що нового" після оновлень',
 
   "settings.updates.row.startup.title": "Перевіряти оновлення під час запуску",
-  "settings.updates.row.startup.description": "Автоматично перевіряти наявність оновлень під час запуску OpenCode",
+  "settings.updates.row.startup.description": "Автоматично перевіряти наявність оновлень під час запуску [AoG] Hub",
   "settings.updates.row.check.title": "Перевірити оновлення",
   "settings.updates.row.check.description": "Вручну перевірити наявність оновлень і встановити, якщо доступні",
   "settings.updates.action.checkNow": "Перевірити зараз",
@@ -1094,7 +1094,7 @@ export const dict = {
   "settings.updates.action.downloading": "Завантаження...",
   "settings.updates.action.installing": "Встановлення...",
   "settings.updates.toast.latest.title": "У вас актуальна версія",
-  "settings.updates.toast.latest.description": "Ви використовуєте останню версію OpenCode.",
+  "settings.updates.toast.latest.description": "Ви використовуєте останню версію [AoG] Hub.",
   "sound.option.none": "Немає",
   "sound.option.alert01": "Alert 01",
   "sound.option.alert02": "Alert 02",
