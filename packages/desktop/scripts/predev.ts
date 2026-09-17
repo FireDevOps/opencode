@@ -1,5 +1,8 @@
 import { $ } from "bun"
-import { downloadCliToResources } from "./utils"
+import { downloadCliToResources, ensurePinnedOpenCodeVersion } from "./utils"
+
+const version = await ensurePinnedOpenCodeVersion()
+console.log(`Building sidecar server as version ${version} (dev)`)
 
 await $`bun run install-electron`
 

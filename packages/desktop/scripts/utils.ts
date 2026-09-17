@@ -13,6 +13,26 @@ export function resolveChannel(): Channel {
   return "dev"
 }
 
+/**
+ * Pin the version baked into the sidecar server build.
+ *
+ * Upstream gates features (e.g. console free tier, "1.17.0 or newer") on the
+ * reported client version. Without OPENCODE_VERSION set, preview builds bake
+ * `0.0.0-<channel>-<timestamp>`, which fails every such gate. Default to the
+ * opencode package version so fork builds report a real release version;
+ * an explicitly set OPENCODE_VERSION always wins.
+ */
+export async function ensurePinnedOpenCodeVersion(): Promise<string> {
+  const existing = Bun.env.OPENCODE_VERSION
+  if (existing) return existing
+  const pkg = (await Bun.file(join(import.meta.dir, "..", "..", "opencode", "package.json")).json()) as {
+    version?: unknown
+  }
+  const version = typeof pkg.version === "string" && pkg.version ? pkg.version : "1.18.30"
+  process.env.OPENCODE_VERSION = version
+  return version
+}
+
 export const CLI_BINARIES: Array<{ rustTarget: string; package: string; os: string; cpu: string }> = [
   {
     rustTarget: "aarch64-apple-darwin",

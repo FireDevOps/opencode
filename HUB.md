@@ -37,6 +37,14 @@ bun --filter @aog/hub-desktop package:win
 The channel must be set for `build` too — it is baked into the app identity
 (app id, taskbar name, updater). Keep it identical for build and package.
 
+The sidecar server version is pinned automatically from
+`packages/opencode/package.json` (`ensurePinnedOpenCodeVersion` in
+`packages/desktop/scripts/utils.ts`, wired into both `prebuild.ts` and
+`predev.ts`). Without this, preview builds bake `0.0.0-<channel>-<ts>`,
+which fails upstream version gates such as the console free tier
+("1.17.0 or newer required"). Override with `OPENCODE_VERSION=x.y.z`
+if you ever need a specific stamp.
+
 Output: `packages/desktop/dist/*.exe` (NSIS installer, `aog-hub-win-x64.exe`).
 
 Channels: `dev` (default) / `beta` / `prod` via `OPENCODE_CHANNEL`.
