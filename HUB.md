@@ -25,7 +25,12 @@ Branch: `forge-desktop` (off `dev`). Upstream: `anomalyco/opencode`.
 
 ## Build (Windows)
 
-Prerequisites: Node 20+, Bun (`npm i -g bun`).
+Easiest: double-click **`build-hub.bat`** in the repo root (or run
+`build-hub.bat [dev|beta|prod]`, default `prod`). It checks for bun,
+installs dependencies on first run, then builds and packages the Windows
+installer for you.
+
+Manual equivalent (PowerShell):
 
 ```powershell
 bun install
@@ -75,6 +80,30 @@ options. Startup discovery pulls the rest of the live catalog from
 `{baseURL}/models` (override the default `https://aogamers.net/forge/v1`
 with `FORGE_BASE_URL`). Any `provider.forge` block in `opencode.json`
 merges over these defaults.
+
+## Local models via Ollama ($0)
+
+`ollama` ships as a built-in provider named **Ollama (local)** — same
+pattern as Forge, no API key, no user config. It defaults to
+`http://localhost:11434/v1` (override with `OLLAMA_BASE_URL`, or set
+`OLLAMA_HOST` and `/v1` is appended) with `qwen3:8b` (~5GB, fits 16GB-RAM
+CPU boxes). Startup discovery adds any other locally-pulled models from
+`/v1/models`, so `ollama pull <model>` is enough to list more. Any
+`provider.ollama` block in `opencode.json` merges over these defaults:
+
+```json
+{
+  "provider": {
+    "ollama": {
+      "options": { "baseURL": "http://localhost:11434/v1" },
+      "models": { "qwen3:8b": { "name": "Qwen3 8B (local)" } }
+    }
+  }
+}
+```
+
+Note: 20GB+ models (e.g. 27B Q4) time out on 16GB-RAM machines — stick to
+`qwen3:8b` or smaller locally and use Forge for heavy work.
 
 ## Reasoning in the desktop client
 
